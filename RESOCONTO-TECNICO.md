@@ -17,7 +17,7 @@ Nessun framework, nessun build tool, nessuna dipendenza da gestire (niente `pack
 
 | File | Righe | Ruolo |
 |---|---|---|
-| `index.html` | 366 | struttura e contenuti dell'unica pagina |
+| `index.html` | 422 | struttura e contenuti dell'unica pagina |
 | `assets/css/style.css` | 818 | stile, tema, responsive |
 | `assets/js/main.js` | 168 | interattività (vanilla JS, IIFE, nessuna libreria esterna) |
 
@@ -63,15 +63,16 @@ Breakpoint responsive: 980px, 720px, 480px. Supporto esplicito per `prefers-redu
 
 ## 6. Contenuti della pagina
 
-Sei sezioni ancorate (`#progetto #contesto #tappe #foto #nh-hotels #contatti`), navigabili da un menu fisso:
+Sette sezioni ancorate (`#origini #progetto #contesto #tappe #foto #nh-hotels #contatti`), navigabili da un menu fisso:
 
 1. **Hero** — titolo, sottotitolo, CTA
-2. **001 Il progetto** — descrizione, quote, statistiche (12 città, ingresso gratuito, GEC)
-3. **002 Il contesto** — timeline storica 2012→2021 (dal progetto all'Accordo di Parigi, Fridays for Future, Green Deal, Superbonus, PNRR)
-4. **003 Le tappe** — marquee scorrevole + griglia dei 12 loghi città (Trento → Catania)
-5. **004 Foto** — galleria di 8 foto con lightbox
-6. **005 NH Hotels** — case study sul TRI Award (CETRI, Jeremy Rifkin)
-7. **006 Contatti** — link mailto (nessun form di contatto)
+2. **000 Le origini** — mini-timeline che collega UDS → GEC → Green Day (aggiunta l'11/07/2026 per chiarire la relazione tra i tre nomi)
+3. **001 Il progetto** — descrizione, quote, statistiche (12 città, ingresso gratuito, GEC)
+4. **002 Il contesto** — timeline storica 2012→2021 (dal progetto all'Accordo di Parigi, Fridays for Future, Green Deal, Superbonus, PNRR)
+5. **003 Le tappe** — marquee scorrevole + griglia dei 12 loghi città (Trento → Catania)
+6. **004 Foto** — galleria di 8 foto con lightbox
+7. **005 NH Hotels** — case study sul TRI Award (CETRI, Jeremy Rifkin)
+8. **006 Contatti** — link mailto (nessun form di contatto)
 
 ## 7. Asset e peso
 
@@ -110,6 +111,12 @@ Al punto 3, git ha riportato un **indice corrotto** ("index file corrupt"). Caus
 
 Questo stesso conflitto **può ripresentarsi** in futuro con GitHub Desktop se OneDrive sincronizza nello stesso momento in cui si fa un commit. Raccomandazione operativa nella guida allegata.
 
-## 12. In sintesi
+## 12. Aggiornamento narrativo (11/07/2026)
+
+Aggiunta la sezione **"000 — Le origini"** (nuova, prima di "001 Il progetto"): mini-timeline che collega UDS → GEC → Green Day, per risolvere la confusione tra i tre nomi. Aggiornati di conseguenza: voce di menu (desktop e mobile), link "Scorri" dell'hero (ora punta a `#origini`), e il credito UDS nel footer, riscritto perché UDS non risulti un semplice fornitore esterno ("sito web a cura di") ma lo studio all'origine del percorso.
+
+**Nota tecnica**: subito dopo questa modifica, il mount bash di questa cartella (sincronizzata OneDrive) ha restituito una versione di `index.html` non aggiornata (conteggio righe e struttura non corrispondenti), mentre il tool di lettura file ha sempre restituito la versione corretta. Per verifiche su questo repository, in caso di dubbio è più affidabile leggere i file direttamente piuttosto che fidarsi di un comando bash lanciato subito dopo una modifica.
+
+## 13. In sintesi
 
 Sito solido, leggero nel codice (nessuna dipendenza da mantenere/aggiornare), ben curato dal punto di vista dell'accessibilità di base (aria-label, rispetto reduced-motion) ma con margine di miglioramento su SEO/social e peso immagini. Il rischio operativo principale non è nel codice del sito ma nella convivenza tra git e la sincronizzazione OneDrive della cartella del repository.

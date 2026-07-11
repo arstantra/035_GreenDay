@@ -2,32 +2,6 @@
 
 Istruzioni operative per chiunque intervenga in futuro su questo sito (te stesso o altri). Per il quadro tecnico completo vedi `RESOCONTO-TECNICO.md`.
 
-## 0. Da fare subito (riparazione indice git + completare esclusione _archivio)
-
-Durante la preparazione di questi documenti ho creato il file `.gitignore` e avviato la rimozione di `_archivio` dal repository, ma un conflitto tra git e la sincronizzazione OneDrive ha lasciato l'indice di git in uno stato corrotto (nessun file perso — solo la "cache" interna di git da ricostruire). Per completare, sul tuo PC:
-
-1. In GitHub Desktop: **Repository → Apri in Prompt dei comandi** (o PowerShell/Git Bash)
-2. Esegui:
-   ```
-   git reset
-   ```
-   Ripara l'indice riallineandolo all'ultimo commit — nessuna perdita di dati.
-3. Esegui:
-   ```
-   git rm -r --cached _archivio
-   ```
-   Rimuove `_archivio` dal tracking di git. **I file restano sul tuo PC**, spariscono solo dal repository.
-4. Torna su GitHub Desktop: dovresti vedere `.gitignore` come file nuovo e i 13 file di `_archivio` come rimossi.
-5. Scrivi un messaggio di commit (es. "Escludi _archivio dal repository") e fai **commit + push** come al solito.
-
-Da quel momento in poi, qualsiasi file dentro `_archivio` non comparirà più tra le modifiche da pubblicare in GitHub Desktop.
-
-**Raccomandazione per evitare che ricapiti**: la cartella `.git` sta dentro una cartella sincronizzata da OneDrive, e questo può causare corruzioni come quella di oggi (OneDrive e git competono nello scrivere gli stessi file). Due opzioni, in ordine di comodità:
-
-- Su OneDrive, escludi dalla sincronizzazione la sola sottocartella `.git` (tasto destro → "Libera spazio"/impostazioni cartella, dove disponibile)
-- Oppure, più semplice: evita di far coincidere nel tempo un salvataggio automatico di OneDrive con un commit — se un commit fallisce con un errore simile a "index file corrupt" o "unable to unlink", riprova dopo qualche secondo
-- GitHub è già il backup remoto del codice: non c'è bisogno che anche OneDrive tenga in sync `.git`
-
 ## 1. Cosa serve per lavorare sul sito
 
 Nulla di particolare: è HTML/CSS/JS puro, senza build. Bastano:
