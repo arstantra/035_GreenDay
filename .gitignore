@@ -1,0 +1,7 @@
+# File di sistema (Windows / OneDrive / macOS)
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Materiali di lavoro non pubblicati sul sito
+_archivio/
