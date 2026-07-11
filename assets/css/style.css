@@ -127,18 +127,20 @@ button{ font: inherit; -webkit-appearance: none; appearance: none; }
   font-size: 1.05rem;
   letter-spacing: -.01em;
   color: var(--text);
+  white-space: nowrap;
 }
 .brand-name em{ color: var(--lime); font-style: normal; }
 
 .nav-links{
   display: flex;
-  gap: 30px;
+  gap: 24px;
 }
 .nav-links a{
   text-decoration: none;
   color: var(--text-dim);
   font-size: .92rem;
   font-weight: 500;
+  white-space: nowrap;
   transition: color .2s ease;
   position: relative;
 }
@@ -426,7 +428,7 @@ button{ font: inherit; -webkit-appearance: none; appearance: none; }
 
 .stats-grid{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
   margin-top: 48px;
 }
@@ -788,12 +790,19 @@ button{ font: inherit; -webkit-appearance: none; appearance: none; }
 }
 
 /* ---------- responsive ---------- */
-@media (max-width: 980px){
+/* Nav: soglia separata dal resto del layout — con 8 voci in menu serve più
+   respiro orizzontale del breakpoint dei contenuti, altrimenti "nav-links"
+   e "brand-name" vanno a capo in modo scomposto prima di passare all'hamburger. */
+@media (max-width: 1280px){
   .nav-links{ display: none; }
   .nav-toggle{ display: flex; }
+}
+
+@media (max-width: 980px){
   .cities-grid{ grid-template-columns: repeat(4, 1fr); }
   .case-card{ grid-template-columns: 1fr; }
   .mini-stats{ grid-template-columns: repeat(4,1fr); }
+  .stats-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 720px){
