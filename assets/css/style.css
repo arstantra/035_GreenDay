@@ -687,9 +687,13 @@ button{ font: inherit; -webkit-appearance: none; appearance: none; }
   gap: 24px;
   flex-wrap: wrap;
 }
+.footer-brands{ display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
 .footer-brand{ display: flex; align-items: center; gap: 14px; }
-.footer-brand img{ height: 26px; opacity: .75; }
+.footer-brand img{ height: 26px; opacity: .75; transition: opacity .2s ease; }
+.footer-brand a:hover img, .footer-brand a:focus-visible img{ opacity: 1; }
 .footer-brand p{ margin: 0; color: var(--text-muted); font-size: .85rem; max-width: 340px; }
+.footer-brand p a{ color: var(--text-dim); text-decoration: underline; text-underline-offset: 2px; }
+.footer-brand p a:hover{ color: var(--lime); }
 .footer-credit{ margin: 0; color: var(--text-muted); font-size: .8rem; }
 
 /* ---------- lightbox ---------- */
